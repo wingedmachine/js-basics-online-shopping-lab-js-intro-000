@@ -43,7 +43,7 @@ function removeFromCart(item) {
   var cart = getCart();
   for(var i = 0; i < cart.length; i++) {
     if(cart[i]['itemName'] !== item) continue;
-    
+
     cart.splice(i, 1);
     break;
   }
