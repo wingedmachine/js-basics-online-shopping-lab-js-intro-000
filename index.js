@@ -23,7 +23,7 @@ function viewCart() {
     var inventory = 'In your cart, you have ';
     for(var i = 0; i < cart.length; i++) {
       if(i !== 0) inventory += ', ';
-      if(i === cart.length && cart.length !== 1) inventory += 'and ';
+      if(i === cart.length - 1 && cart.length !== 1) inventory += 'and ';
       inventory += `${cart[i]['itemName']} at $${cart[i]['itemPrice']}`;
     }
     return inventory + '.';
