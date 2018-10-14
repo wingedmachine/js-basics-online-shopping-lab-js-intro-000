@@ -19,6 +19,14 @@ function viewCart() {
   var cart = getCart();
   if(cart.length === 0) {
     return 'Your shopping cart is empty.';
+  } else {
+    var inventory = 'In your cart, you have ';
+    for(var i = 0; i < cart.length; i++) {
+      if(i !== 0) inventory += ', ';
+      if(i === cart.length - 1) inventory += 'and ';
+      inventory += `${cart[i][itemName]} at $${cart[i][itemPrice]}`;
+    }
+    return inventory + '.';
   }
 }
 
