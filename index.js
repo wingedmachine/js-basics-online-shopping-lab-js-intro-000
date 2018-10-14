@@ -42,12 +42,15 @@ function total() {
 function removeFromCart(item) {
   var cart = getCart();
   for(var i = 0; i < cart.length; i++) {
-    if(cart[i]['itemName'] !== item) continue;
+    if(cart[i]['itemName'] !== item) {
+      if(i === cart.length - 1) return 'That item is not in your cart.';
+      else continue;
+    }
 
     cart.splice(i, 1);
+    setCart(cart);
     break;
   }
-  setCart(cart);
 }
 
 function placeOrder(cardNumber) {
